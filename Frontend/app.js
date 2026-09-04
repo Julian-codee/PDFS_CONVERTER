@@ -14,7 +14,7 @@ boton.addEventListener("click", async () => {
         if (respuesta.ok) {
 
             estado.textContent =
-                respuesta.mensaje;
+                respuesta.Message;
 
         }
 
