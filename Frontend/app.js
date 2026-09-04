@@ -6,15 +6,15 @@ boton.addEventListener("click", async () => {
 
     try {
 
-        const respuesta =
+        const response =
             await window.pywebview.api.test_conection();
 
-        console.log(respuesta);
+        console.log(response);
 
-        if (respuesta.ok) {
+        if (response.ok) {
 
             estado.textContent =
-                respuesta.Message;
+                response.Message;
 
         }
 
