@@ -1,13 +1,252 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+/* Importar fuente Inter para un estilo moderno y limpio */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-main {
-    padding: 40px;
-}
+        :root {
+            --bg-body: #F9FAFB;
+            --bg-card: #FFFFFF;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --text-light: #9CA3AF;
+            --accent-orange: #E87A5D;
+            --accent-green-dark: #225C54;
+            --accent-green-light: #E7F1EF;
+            --border-color: #E5E7EB;
+            --border-dashed: #7AB4A8;
+            --bg-dropzone: #F4F9F8;
+            --bg-input: #F9FAFB;
+        }
 
-button {
-    padding: 12px 20px;
-    cursor: pointer;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        /* Estilos de las tarjetas */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #F3F4F6;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .step-number {
+            color: var(--accent-orange);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        /* Zona de Drop (Arrastrar y Soltar) */
+        .drop-zone {
+            border: 2px dashed var(--border-dashed);
+            border-radius: 12px;
+            background-color: var(--bg-dropzone);
+            padding: 50px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .drop-zone:hover {
+            background-color: #ecf6f5;
+        }
+
+        .icon-upload {
+            background-color: var(--accent-green-light);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--accent-green-dark);
+        }
+
+        .drop-zone h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .drop-zone p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .drop-zone a {
+            color: var(--accent-green-dark);
+            text-decoration: underline;
+            text-decoration-color: var(--accent-green-dark);
+            text-underline-offset: 2px;
+        }
+
+        .file-limit {
+            display: block;
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Rejilla de configuraciones (Grid) */
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0 16px;
+            height: 44px;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: var(--text-light);
+        }
+
+        .input-wrapper input, 
+        .input-wrapper select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .input-wrapper select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        /* Flecha personalizada para el select */
+        .select-arrow {
+            position: absolute;
+            right: 16px;
+            pointer-events: none;
+            color: var(--text-main);
+        }
+
+        .input-wrapper input::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .input-suffix {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Botón Principal */
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-green-dark);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #1a4740;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+            padding: 0 8px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .settings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+        
