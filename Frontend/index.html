@@ -17,94 +17,104 @@
 
     <main>
 
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <span class="step-number">01</span>
-                    <h2 class="card-title">Sube tu PDF</h2>
-                </div>
-                <p class="card-subtitle">Arrastra tu archivo aquí o selecciónalo desde tu dispositivo</p>
+        <sectionc class="Inofrmative-Content">
 
-                <div class="drop-zone">
-                    <div class="icon-upload">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
+            <!--HEADER-->
+
+            
+
+
+            </section>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="step-number">01</span>
+                        <h2 class="card-title">Sube tu PDF</h2>
                     </div>
-                    <h3>Arrastra y suelta tu PDF aquí</h3>
-                    <p>o <a href="#">explora tus archivos</a></p>
-                    <span class="file-limit">PDF · Máximo 50 MB</span>
-                </div>
-            </div>
+                    <p class="card-subtitle">Arrastra tu archivo aquí o selecciónalo desde tu dispositivo</p>
 
-            <div class="card">
-                <div class="card-header">
-                    <span class="step-number">02</span>
-                    <h2 class="card-title">Personaliza tu salida</h2>
-                </div>
-                <p class="card-subtitle">Configura el formato y la calidad de tus imágenes</p>
-
-                <div class="settings-grid">
-                    <div class="input-group">
-                        <label>Formato de imagen</label>
-                        <div class="input-wrapper">
-                            <select>
-                                <option value="png">PNG</option>
-                                <option value="jpg">JPG</option>
-                            </select>
-                            <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
+                    <div class="drop-zone">
+                        <div class="icon-upload">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
                             </svg>
                         </div>
-                        <span class="help-text">Recomendado: PNG para mejor calidad</span>
+                        <h3>Arrastra y suelta tu PDF aquí</h3>
+                        <p>o <a href="#">explora tus archivos</a></p>
+                        <span class="file-limit">PDF · Máximo 50 MB</span>
                     </div>
+                </div>
 
-                    <div class="input-group">
-                        <label>Resolución</label>
-                        <div class="input-wrapper">
-                            <input type="number" value="200" min="10" max="1200" />
-                            <span class="input-suffix">DPI</span>
-                        </div>
-                        <span class="help-text">Entre 10 y 1200 DPI</span>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="step-number">02</span>
+                        <h2 class="card-title">Personaliza tu salida</h2>
                     </div>
+                    <p class="card-subtitle">Configura el formato y la calidad de tus imágenes</p>
 
-                    <div class="input-group">
-                        <label>Páginas a convertir</label>
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="Todas las páginas" />
-                            <span class="input-suffix" style="opacity: 0.7;">Opcional</span>
+                    <div class="settings-grid">
+                        <div class="input-group">
+                            <label>Formato de imagen</label>
+                            <div class="input-wrapper">
+                                <select>
+                                    <option value="png">PNG</option>
+                                    <option value="jpg">JPG</option>
+                                </select>
+                                <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <span class="help-text">Recomendado: PNG para mejor calidad</span>
                         </div>
-                        <span class="help-text">Ejemplo: 1-3, 5, 8-10</span>
+
+                        <div class="input-group">
+                            <label>Resolución</label>
+                            <div class="input-wrapper">
+                                <input type="number" value="200" min="10" max="1200" />
+                                <span class="input-suffix">DPI</span>
+                            </div>
+                            <span class="help-text">Entre 10 y 1200 DPI</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Páginas a convertir</label>
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Todas las páginas" />
+                                <span class="input-suffix" style="opacity: 0.7;">Opcional</span>
+                            </div>
+                            <span class="help-text">Ejemplo: 1-3, 5, 8-10</span>
+                        </div>
                     </div>
+                </div>
+
+                <button class="btn-submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    Convertir a imágenes
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <div class="footer">
+                    <span>Hecho para documentos que importan.</span>
+                    <span>Tu privacidad es nuestra prioridad.</span>
                 </div>
             </div>
 
-            <button class="btn-submit">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-                Convertir a imágenes
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </button>
-
-            <div class="footer">
-                <span>Hecho para documentos que importan.</span>
-                <span>Tu privacidad es nuestra prioridad.</span>
-            </div>
-        </div>
-
-        <script src="app.js"></script>
+            <script src="app.js"></script>
 
 </body>
 
