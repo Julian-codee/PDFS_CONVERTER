@@ -1,5 +1,5 @@
-/* Importar fuente Inter para un estilo moderno y limpio */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* Importar fuente Inter (principal) y Playfair Display (para el texto cursivo) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap');
 
         :root {
             --bg-body: #F9FAFB;
@@ -7,7 +7,7 @@
             --text-main: #111827;
             --text-muted: #6B7280;
             --text-light: #9CA3AF;
-            --accent-orange: #E87A5D;
+            --accent-orange: #F06A42;
             --accent-green-dark: #225C54;
             --accent-green-light: #E7F1EF;
             --border-color: #E5E7EB;
@@ -28,12 +28,134 @@
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 0 20px 60px 20px;
         }
 
-        .container {
+        .page-wrapper {
             width: 100%;
+            max-width: 900px;
+        }
+
+        /* --- Header y Navegación --- */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background-color: var(--accent-orange);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--text-light);
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--text-main);
+        }
+
+        /* --- Sección Hero (Título Principal) --- */
+        .hero {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .hero-title-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--accent-green-dark);
+            letter-spacing: normal;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 580px;
+        }
+
+        /* --- Contenedor Principal (Tarjetas) --- */
+        .content-container {
             max-width: 850px;
+            margin: 0 auto;
         }
 
         /* Estilos de las tarjetas */
@@ -56,7 +178,7 @@
         .step-number {
             color: var(--accent-orange);
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .card-title {
@@ -179,7 +301,6 @@
             cursor: pointer;
         }
 
-        /* Flecha personalizada para el select */
         .select-arrow {
             position: absolute;
             right: 16px;
@@ -239,6 +360,12 @@
 
         /* Responsividad */
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 38px;
+            }
+            .nav-actions .secure-badge {
+                display: none; /* Oculta el texto en móviles para ahorrar espacio */
+            }
             .settings-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -249,4 +376,3 @@
                 gap: 10px;
             }
         }
-        
