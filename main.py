@@ -40,6 +40,8 @@ class API:
 
             # Validación dentro del backend
 
+            Validation_pdf = route_pdf
+
 
         
 
