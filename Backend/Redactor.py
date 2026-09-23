@@ -49,7 +49,7 @@ class RangoPaginasInvalido(ErrorConversorPDF):
     """
 
 
-def validar_archivo_pdf(ruta_pdf):
+def validation_pdf(ruta_pdf):
 
     if not ruta_pdf or not str(ruta_pdf).strip():
         raise ArchivoPDFInvalido("No se especificó ninguna ruta de archivo PDF.")
@@ -256,7 +256,7 @@ def convertir_pdf_a_imagenes(
     alto_maximo=None,
 ):
 
-    validar_archivo_pdf(ruta_pdf)
+    validation_pdf(ruta_pdf)
     dpi = validar_dpi(dpi)
     ancho_maximo = validar_dimension_maxima(ancho_maximo, "ancho_maximo")
     alto_maximo = validar_dimension_maxima(alto_maximo, "alto_maximo")

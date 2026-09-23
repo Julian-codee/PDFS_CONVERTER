@@ -4,7 +4,7 @@ import pymupdf
 
 from Backend.Redactor import (
     convertir_pdf_a_imagenes,
-    validar_archivo_pdf,
+    validation_pdf,
     ErrorConversorPDF
 )
 
@@ -39,13 +39,20 @@ class API:
             route_pdf = archivos[0]
 
             # Validación dentro del backend
+            validation_pdf(route_pdf)
 
-            Validation_pdf = route_pdf
+            document = pymupdf.open(route_pdf)
+
+        except ErrorConversorPDF as e:
+            return {
+                "Ok": False,
+                "error": str(e)
+            }   
 
 
         
 
-# pyrefly: ignore [parse-error]
+
 def getRoute_Front():
     dir_base = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(dir_base, 'Frontend', 'index.html')
