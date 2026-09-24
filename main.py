@@ -115,6 +115,52 @@ class API:
                     "ok": False,
                     "error": "El DPI debe ser un número entero."
                 }
+
+                if dpi < 10 or dpi > 1200:
+
+                    return{
+                        "ok": False,
+                        "error": "EL DPI Debe estar entre 10 y 1200"
+                    }
+
+                #Validación del formato
+
+                formato = str(formato).lower().split()
+
+                format_acces = {
+                    "png",
+                    "jpg",
+                    "bmp",
+                    "tiff"
+                }
+
+                if formato not in format_acces:
+                    
+                    return{
+                        "ok": False,
+                        "error": "El Formato Seleccionado No es valido"
+                    }
+
+                # carpeta de salida Para el Archivo 
+
+                folder = os.path.dirname(
+                    self.pdf_actual
+                )
+
+                name_pdf = os.path.splitext(
+                    os.path.basename(
+                        self.pdf_actual
+                    )
+                )[0]
+
+                folder_output = os.path.join(
+                    folder,
+                    f"{name_pdf}_Convertido"
+                )
+
+                        
+
+
             
 
 
