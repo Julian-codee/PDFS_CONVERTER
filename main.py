@@ -1,3 +1,4 @@
+from bottle import RouteError
 import os
 import webview
 import pymupdf
@@ -41,13 +42,38 @@ class API:
             # Validación dentro del backend
             validation_pdf(route_pdf)
 
+            # Obtenemos la informacion del documento y su conteo de paginas
             document = pymupdf.open(route_pdf)
+            total_pages = document.page_count
+
+            document.close()
+
+            size_bytes = os.path.getsize(route_pdf)
+            name = os.path.basename(route_pdf)
+
+            # Hacemos el guardado del pdf seleccionado
+
+            self.pdf_actual = route_pdf
+
+            return{
+                "ok": True,
+                "name": name,
+                "route": route_pdf,
+                "pages": total_pages,
+                "size": size_bytes
+            }
 
         except ErrorConversorPDF as e:
             return {
-                "Ok": False,
+                "ok": False,
                 "error": str(e)
-            }   
+            }
+            
+        except Exception as e:
+            return{
+                "ok": False,
+                "error": f"No se pudo Seleccionar el PDF: {e}"
+            }
 
 
         
