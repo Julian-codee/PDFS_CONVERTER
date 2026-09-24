@@ -68,12 +68,56 @@ class API:
                 "ok": False,
                 "error": str(e)
             }
-            
+        
         except Exception as e:
             return{
                 "ok": False,
                 "error": f"No se pudo Seleccionar el PDF: {e}"
             }
+
+        #Obtenemos el Estado
+
+        def get_state(self):
+
+            return {
+                "ok": True,
+                "pdf_seleccionado": self.pdf_actual is not None
+            }
+
+        #Conversion del PDF
+
+    def convertir_pdf(
+        self,
+        formato,
+        dpi,
+        rango
+    ):
+        try:
+
+            # campo Para la comprobación del PDF
+
+             if not self.pdf_actual:
+
+                return {
+                    "ok": False,
+                    "error": "Primero debes seleccionar un PDF."
+                }
+            
+            #Validacion del DPI
+
+                try:
+
+                    dpi = int(dpi)
+
+                except (TypeError, ValueError):
+
+                    return {
+                    "ok": False,
+                    "error": "El DPI debe ser un número entero."
+                }
+            
+
+
 
 
         
