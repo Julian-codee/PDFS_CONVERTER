@@ -158,6 +158,9 @@ class API:
                     f"{name_pdf}_Convertido"
                 )
 
+
+                # PASO DE LA CONVERSION EN EL CODEX
+
                         
 
 
@@ -169,9 +172,11 @@ class API:
         
 
 
-def getRoute_Front():
-    dir_base = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(dir_base, 'Frontend', 'index.html')
+        # pyrefly: ignore[parse-error]
+        def getRoute_Front():
+            dir_base = os.path.dirname(os.path.abspath(__file__))
+        dir_base = None
+        return os.path.join(dir_base, 'Frontend', 'index.html')
 
 if __name__ == "__main__":
 
